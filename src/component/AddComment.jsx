@@ -46,12 +46,10 @@ const AddComment = ({ asin }) => {
             placeholder="Inserisci qui il testo"
             value={comment.comment}
             onChange={(e) =>
-              setComment({
-                comment: {
-                  ...comment,
-                  comment: e.target.value,
-                },
-              })
+              setComment((prevComment) => ({
+                ...prevComment,
+                comment: e.target.value,
+              }))
             }
           />
         </Form.Group>
@@ -61,12 +59,10 @@ const AddComment = ({ asin }) => {
             as="select"
             value={comment.rate}
             onChange={(e) =>
-              setComment({
-                comment: {
-                  ...comment,
-                  rate: e.target.value,
-                },
-              })
+              setComment((prevComment) => ({
+                ...prevComment,
+                rate: e.target.value,
+              }))
             }
           >
             <option>1</option>
